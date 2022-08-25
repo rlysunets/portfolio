@@ -1,0 +1,66 @@
+@import "_reset";
+
+// header styles
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: #07374a;
+    color: #fff;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    &_name {
+        font-family: "Permanent Marker";
+        font-size: 2em;
+        cursor: pointer;
+    }
+    &_menu {
+        .menu_list {
+            display: flex;
+            gap: 60px;
+            font-size: 1.2em;
+            .menu_item a {
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #fff;
+                    bottom: -5px;
+                    left: 0;
+                    transform: scaleX(0);
+                    transition: all .3s ease-in-out;
+                }
+                &:hover::before {
+                    transform: scaleX(1);
+                } 
+            }
+        }
+    }
+}
+// header styles
+
+
+main {
+    height: 2000px;
+    background-color: #fff;
+}
+
+.intro {
+    background-color: #25b79f;
+    height: 100vh;
+    &_wrap {
+        padding-top: 50vh;
+        color: #fff;
+        h1, h2 {
+            text-align: center;
+        }
+    }
+}
