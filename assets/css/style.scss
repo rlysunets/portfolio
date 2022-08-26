@@ -1,5 +1,7 @@
 @import "_reset";
-
+* {
+    scroll-behavior: smooth;
+}
 // header styles
 header {
     position: fixed;
@@ -8,7 +10,6 @@ header {
     z-index: 100;
     width: 100%;
     background-color: #07374a;
-    color: #fff;
 }
 .header {
     display: flex;
@@ -17,14 +18,14 @@ header {
     height: 80px;
     &_name {
         font-family: "Permanent Marker";
-        font-size: 2em;
+        font-size: 2rem;
         cursor: pointer;
     }
     &_menu {
         .menu_list {
             display: flex;
             gap: 60px;
-            font-size: 1.2em;
+            font-size: 1.2rem;
             .menu_item a {
                 position: relative;
                 &::before {
@@ -44,23 +45,136 @@ header {
             }
         }
     }
+    &-small {
+        height: 60px;
+    }
 }
 // header styles
 
-
+// main
 main {
     height: 2000px;
-    background-color: #fff;
 }
-
+// intro styles
 .intro {
     background-color: #25b79f;
     height: 100vh;
-    &_wrap {
-        padding-top: 50vh;
-        color: #fff;
-        h1, h2 {
+    position: relative;
+}
+
+.intro_wrap {
+    padding-top: 40vh;
+    color: #fff;
+    text-align: center;
+    &_title {
+        margin-bottom: 50px;
+        font-family: "Permanent Marker";
+        font-size: 3.5rem;
+    }
+    &_subtitle {
+        font-size: 3rem;
+    }
+    &_arrow {
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        bottom: 15%;
+        transform: translateX(-50%);
+        &::after {
+            position: relative;
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            border-left: 4px solid #fff;
+            border-bottom: 4px solid #fff;
+            transform: rotate(-45deg);
+            animation: bounce 1.5s infinite;
+        } 
+    }
+}
+
+@keyframes bounce {
+    0% {
+        bottom: 0;
+    }
+    25% {
+        bottom: -2px;
+    }
+    50% {
+        bottom: -4px;
+    }
+    75% {
+        bottom: -2px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+// intro styles
+
+// section_title
+.section_title {
+    font-family: "Permanent Marker";
+    font-size: 2.2rem;
+    color: #25b79f;
+}
+// section_title
+
+// about styles
+.about {
+    background-color: #07374a;
+    padding: 100px 0;
+    border: 2px solid #fff;
+}
+
+.about_wrap {
+    &_title {
+        margin-bottom: 60px;
+    }
+    &_content {
+        
+        
+    }
+}
+.about_me {
+    display: flex;
+    &_descr {
+        flex: 50%;
+        .descr_photo {
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 40px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .descr_text {
+            padding: 0 20px;
+            font-size: 1.2rem;
+            text-align: justify;
+            p:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &_skills {
+        flex: 50%;
+        padding: 30px 0;
+        .skills_title {
             text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+        .skills_list {
+
         }
     }
 }
+// about styles
+// main
