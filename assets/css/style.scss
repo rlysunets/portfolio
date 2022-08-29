@@ -118,6 +118,7 @@ main {
     font-family: "Permanent Marker";
     font-size: 2.2rem;
     color: #25b79f;
+    margin-bottom: 60px;
 }
 // section_title
 
@@ -125,16 +126,13 @@ main {
 .about {
     background-color: #07374a;
     padding: 100px 0;
-    border: 2px solid #fff;
 }
 
 .about_wrap {
     &_title {
-        margin-bottom: 60px;
+        // margin-bottom: 60px;
     }
     &_content {
-        
-        
     }
 }
 .about_me {
@@ -170,11 +168,44 @@ main {
             text-align: center;
             font-size: 1.6rem;
             font-weight: 700;
+            margin-bottom: 40px;
         }
         .skills_list {
-
+            columns: 2 auto;
+            &_item {
+                font-family: "Permanent Marker";
+                text-align: center;
+                color: #25b79f;
+                font-size: 1.4rem;
+                padding: 20px;
+            }
         }
     }
 }
 // about styles
+
+// portfolio styles
+.portfolio {
+    background-color: #25b79f;
+    padding: 100px 0;
+}
+.portfolio_wrap {
+    &_title {
+        color: #07374a;
+    }
+}
+// portfolio styles
 // main
+.splide__slide {
+    padding: 0 40px;
+}
+.splide__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// slider
+.splide__pagination__page {
+    display: none;
+}

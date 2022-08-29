@@ -15,3 +15,16 @@ arrow.addEventListener("click", () => {
     const headerHeigh = header.clientHeight;
     window.scrollTo({top: screenHeight-headerHeigh, behavior: "smooth"});
 }) 
+
+//   document.addEventListener( 'DOMContentLoaded', function() {
+//     var splide = new Splide( '.splide' );
+//     splide.mount();
+//   } );
+
+  var splide = new Splide( '.splide', {
+  type: 'loop',
+  perPage: 3,
+  perMove: 1,
+} );
+
+splide.mount();
