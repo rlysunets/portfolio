@@ -18,13 +18,13 @@ header {
     height: 80px;
     &_name {
         font-family: "Permanent Marker";
-        font-size: 2rem;
+        font-size: 1.9rem;
         cursor: pointer;
     }
     &_menu {
         .menu_list {
             display: flex;
-            gap: 60px;
+            gap: 40px;
             font-size: 1.2rem;
             .menu_item a {
                 position: relative;
@@ -49,6 +49,68 @@ header {
         height: 60px;
     }
 }
+.burger,
+.menu-mobile {
+    display: none;
+}
+.menu-mobile {
+    padding: 80px 20px 20px 30px;
+    position: fixed;
+    width: 350px;
+    background-color: #07374a;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: -5;
+    display: flex;
+    flex-direction: column;
+    transition: all .3s ease;
+    transform: translateX(-200%);
+    &.is-active {
+        transform: translateX(0);
+    }
+    &_list {
+        flex: 1 1 auto;
+    }
+    &_item {
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+    &_link {
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+    }
+    &_socials {
+        display: flex;
+        justify-content: space-evenly;
+        li a svg {
+            fill: #25b79f;
+            &:hover {
+                fill: #fff;
+            }
+        }
+    }
+}
+.hidden {
+    overflow: hidden;
+}
+#overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;   
+    background-color: #25b79f;
+    opacity: .4;
+    z-index: 10;
+    &.open {
+       display: block;
+       overflow: hidden;
+    }
+}
 // header styles
 
 // intro styles
@@ -57,11 +119,11 @@ header {
     height: 100vh;
     position: relative;
 }
-
 .intro_wrap {
-    padding-top: 40vh;
+    padding-top: 35vh;
     color: #fff;
     text-align: center;
+    line-height: 2.5rem;
     &_title {
         margin-bottom: 50px;
         font-family: "Permanent Marker";
@@ -74,7 +136,7 @@ header {
         cursor: pointer;
         position: absolute;
         left: 50%;
-        bottom: 15%;
+        bottom: 10%;
         transform: translateX(-50%);
         &::after {
             position: relative;
@@ -89,7 +151,6 @@ header {
         } 
     }
 }
-
 @keyframes bounce {
     0% {
         bottom: 0;
@@ -349,3 +410,50 @@ header {
     }
 }
 // footer
+
+@media screen and (max-width: 900px) {
+    .header_menu {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+}
+@media screen and (max-width: 767px) {
+    .about_me {
+        flex-wrap: wrap;
+        &_descr {
+            flex: 100%;
+            margin-bottom: 50px;     
+        }
+        &_skills {
+            flex: 100%;
+        }
+    }
+    .certifications_wrap_image .image_wrap {
+        flex: 100%;
+    }
+    .social_title {
+        display: none;
+    }
+    .splide__arrow--prev,
+    .splide__arrow--next {
+        display: none;
+    }
+    .splide__pagination__page {
+        display: block;
+        bottom: -30px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .footer_wrap_contats .contats_links {
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 420px) {
+    .about_me_skills .skills_list {
+        columns: 1 auto;
+    }
+}
