@@ -3,7 +3,7 @@ const header = document.querySelector(".header");
 const introHeight = document.querySelector(".intro").clientHeight;
 
 window.addEventListener("scroll", () => {
-    if(window.scrollY > introHeight) {
+    if (window.scrollY > introHeight) {
         header.classList.add("header-small")
     } else {
         header.classList.remove("header-small")
@@ -13,19 +13,21 @@ window.addEventListener("scroll", () => {
 arrow.addEventListener("click", () => {
     const screenHeight = window.innerHeight;
     const headerHeigh = header.clientHeight;
-    window.scrollTo({top: screenHeight-headerHeigh, behavior: "smooth"});
-}) 
+    window.scrollTo({ top: screenHeight - headerHeigh, behavior: "smooth" });
+})
 // slider
-const splide = new Splide( '.splide', {
+const splide = new Splide('.splide', {
     type: 'loop',
     perPage: 3,
-    perMove: 1,
+    perMove: 3,
     breakpoints: {
         768: {
             perPage: 2,
+            perMove: 2,
         },
         480: {
             perPage: 1,
+            perMove: 1,
         },
     }
 });
